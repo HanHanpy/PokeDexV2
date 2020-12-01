@@ -3,7 +3,10 @@ const client = new Client();
 const { getPokemon } = require('./utils/pokemon');
 client.login(process.env.TOKEN);
 
-client.on('ready', () => console.log(`${client.user.tag} has logged in.`));
+client.on('ready', () => {
+    console.log(`${client.user.tag} has logged in.`)
+    client.user.setActivity("!p {ID} or {name}");
+});
 
 client.on('message', async message => {
     if(message.author.bot) return;
