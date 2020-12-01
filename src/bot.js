@@ -1,7 +1,7 @@
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 const { getPokemon } = require('./utils/pokemon');
-client.login('NzgxNzQ5NjY5MjE4NDg0MjM0.X8CLHQ.ymyieI6kG0xip9pVH_UbXs0SvEI');
+client.login(process.env.TOKEN);
 
 client.on('ready', () => console.log(`${client.user.tag} has logged in.`));
 
@@ -14,7 +14,6 @@ client.on('message', async message => {
             const { 
                 sprites, 
                 stats,
-                hp,
                 weight,
                 name, 
                 id, 
